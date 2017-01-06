@@ -24,7 +24,7 @@ void ShootingGameDelegate::RegisterTypes()
 }
 
 void ShootingGameDelegate::LoadResources() {
-	Core::LuaExecuteStartupScript("start.lua");
+	Core::LuaExecuteStartupScript("m_start.lua");
 }
 
 void ShootingGameDelegate::OnResourceLoaded() {

@@ -17,18 +17,15 @@ void TestWidget::Init()
 	_tex1 = Core::resourceManager.Get<Render::Texture>("btnStart_Text");
 	_tex2 = Core::resourceManager.Get<Render::Texture>("Circle");
 	_tex3 = Core::resourceManager.Get<Render::Texture>("Star");
-	
+
 	_curTex = 0;
 	_angle = 0;
 
+	spline.addKey(0.0f, FPoint(100.0f, 100.0f));
+	spline.addKey(0.25f, FPoint(150.0f, 300.0f));
 	spline.addKey(0.5f, FPoint(500.0f, 300.0f));
 	spline.addKey(0.75f, FPoint(630.0f, 450.0f));
 	spline.addKey(1.0f, FPoint(600.0f, 550.0f));
-	spline.addKey(1.25f, FPoint(650.0f, 450.0f));
-	spline.addKey(1.5f, FPoint(700.0f, 350.0f));
-	spline.addKey(1.75f, FPoint(750.0f, 250.0f));
-	spline.addKey(2.0f, FPoint(800.0f, 150.0f));
-
 	spline.CalculateGradient();
 }
 
@@ -108,7 +105,7 @@ void TestWidget::Draw()
 	//
 	// Получаем текущие координаты объекта, двигающегося по сплайну
 	//
-	FPoint currentPosition = spline.getGlobalFrame(math::clamp(0.5f, 2.0f, _timer / 1.0f));
+	FPoint currentPosition = spline.getGlobalFrame(math::clamp(0.0f, 1.0f, _timer / 6.0f));
 
 	//
 	// И рисуем объект в этих координатах

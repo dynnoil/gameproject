@@ -1,19 +1,13 @@
 #ifndef __TARGET_H__
 #define __TARGET_H__
 
-class Target {
-	FPoint _position;
-	float _speed;
-	bool _alive;
-	Render::Texture* _texture;
-	TimedSpline<FPoint> _spline;
-	void makeSplinePath();
+#include "GameObject.h"
+
+class Target : public GameObject {
 public:
 	Target();
-	Target(FPoint position);
-	void SetTexture(Render::Texture *texture);
-	Render::Texture* GetTexture() const;
-	TimedSpline<FPoint> const& GetSpline() const;
+	virtual ~Target() {}
+	virtual void Move();
 };
 
 #endif // !__TARGET_H__

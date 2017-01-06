@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "TestAppDelegate.h"
+#include "ShootingGameDelegate.h"
 
-#define MYAPPLICATION_NAME L"Test"
+#define MYAPPLICATION_NAME L"ShootingGame"
 
 #if defined(ENGINE_TARGET_WIN32)
 int APIENTRY WinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPSTR lpCmdLine, int nCmdShow)
@@ -32,9 +32,9 @@ int main(int argc, const char* argv[])
 
 #if defined(ENGINE_TARGET_WIN32)
 	Core::Application::APPLICATION_NAME = MYAPPLICATION_NAME;
-	Core::RunApplicationWithDelegate(new TestAppDelegate());
+	Core::RunApplicationWithDelegate(new ShootingGameDelegate());
 #else
-	Core::RunApplicationWithDelegate(argc, argv, new TestAppDelegate());
+	Core::RunApplicationWithDelegate(argc, argv, new ShootingGameDelegate());
 #endif
 	
 	return 0;

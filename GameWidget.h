@@ -1,10 +1,15 @@
 #ifndef __GAMEWIDGET_H__
 #define __GAMEWIDGET_H__
 
+#include "Target.h"
+
 class GameWidget : public GUI::Widget {
 	unsigned int _targetsAmount;
 	unsigned int _speed;
 	unsigned long _time;
+	Target *target;
+	TimedSpline<FPoint> spline;
+	float _timer;
 public:
 	GameWidget(const std::string& name, rapidxml::xml_node<>* elem);
 

@@ -1,5 +1,5 @@
 #pragma once
-#include "Target.h"
+
 ///
 /// Виджет - основной визуальный элемент на экране.
 /// Он отрисовывает себя, а также может содержать другие виджеты.
@@ -37,8 +37,6 @@ private:
 
 	EffectsContainer _effCont;
 	ParticleEffectPtr _eff;
-
-	Target _target;
 
 	TimedSpline<FPoint> spline;
 };
